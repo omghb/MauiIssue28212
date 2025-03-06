@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiApp9"
+             x:Class="MauiApp9.SecondPage"
+             x:Name="secondPage" Title="SecondPage">
+    <Grid RowDefinitions="Auto,*" RowSpacing="10">
+        <Button Text="Add item" Clicked="AddItemClicked" WidthRequest="150"/>
+
+        <CollectionView x:Name="collectionView" Grid.Row="1" ItemsSource="{Binding Source={Reference secondPage}, Path=Items}" WidthRequest="200">
+            <CollectionView.EmptyView>
+                <Label Text="Empty" />
+            </CollectionView.EmptyView>
+        </CollectionView>
+    </Grid>
+</ContentPage>
